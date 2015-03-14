@@ -1,0 +1,69 @@
+#{extends 'main.html' /}
+#{set title:'formulario.html' /}
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h1 class="well">Nuevo Equipo</h1>
+		</div>
+	</div>
+	
+
+
+#{form @Equipos.guardarEquipo(nombre,ciudad,seudonimo,añoFundacion)}
+	<div class="row">
+		<div class="col-lg-2 text-right">
+			<legend>Nombre: </legend>
+		</div>
+		
+		<div class="col-lg-8">
+			<input type="text" class="form-control"  name="nombre" placeholder="Ingrese el nombre del Equipo" required>
+		</div>
+	</div>
+	
+
+	
+	
+	<div class="row">
+		<div class="col-lg-2 text-right">
+			<legend>Ciudad: </legend>
+		</div>
+		
+		<div class="col-lg-8">
+			<input type="text" class="form-control"  name="ciudad" placeholder="Ingrese ela ciudad del Equipo" required>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-2 text-right">
+			<legend>Seudonimo: </legend>
+		</div>
+		
+		<div class="col-lg-8">
+			<input type="text" class="form-control" name="seudonimo" placeholder="Ingrese el seudonimo del Equipo" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-2 text-right">
+			<legend>Año de Fundacion: </legend>
+		</div>
+		
+		<div class="col-lg-8">
+			<input type="number" class="form-control" name="añoFundacion" placeholder="Ingrese el año de fundacion del Equipo" required>
+		</div>
+	</div>
+	
+	
+		<div class="row">
+
+		<div class="col-lg-12 text-center">
+			<button type="submit" class="btn btn-primary">Guardar</button>
+			<a href="/equipos" class="btn btn-danger" onclick="return confirm('Esta Seguro?');">Cancelar</a>
+		</div>
+	</div>
+
+#{/form}
+</div>

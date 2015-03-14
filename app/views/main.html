@@ -8,9 +8,22 @@
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}"><!-- Importando Bootstrap -->
         #{get 'moreScripts' /}
     </head>
     <body>
+    
+    <div class="container">
+	    <div class="navbar-collapse  navbar-inverse">
+	    	<ul class="nav navbar-nav ">
+				<li><a href="/">Inicio</a></li>    
+				<li><a href="/">Jugadores</a></li> 
+				<li><a href="/equipos">Equipos</a></li> 	
+	    	</ul>
+	    </div>
+	</div>
+	
+	
         #{doLayout /}
     </body>
 </html>

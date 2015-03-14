@@ -1,0 +1,85 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+<div class="container">
+
+	<div class="row">
+	
+		<div class="col-lg-12 text-center">
+			<h1 class="well">Administracion de Equipos</h1>
+		</div>
+	
+	</div>
+	
+	<div class="row">
+		
+		<div class="col-lg-4">
+		</div>
+		<div class="col-lg-4">
+			
+			<p class="text-justify">
+			La Serie A de Ecuador que por motivos de patrocinio es 
+			llamada desde 2013 con el nombre de Copa Pilsener,1 es
+			 el torneo oficial de fútbol de primera división realizado 
+			 por la Federación Ecuatoriana de Fútbol. El campeonato esta
+			  formado de 3 etapas, en esta última se disputan dos partidos
+			   (ida y vuelta), en donde se define al campeón.
+			 </p>
+		</div>
+		
+
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-4">
+		</div>
+		<div class="col-lg-4 text-center">
+			<a class="btn btn-success" href="/equipos/formulario"> + Nuevo Equipo </a>
+		</div>
+	
+	</div>
+	
+	<br>
+	
+	<div class="row">
+	
+		<div class="col-lg-12">
+		
+		#{if equipos}	
+			<table class="table">
+				<tr>
+					<th>Nombre</th>
+					<th>Ciudad</th>
+					<th>Seudonimo</th>
+					<th>Fundacion</th>
+					<th>Acciones</th>
+				</tr>
+				
+			
+			#{list items:equipos, as:'equi'}
+				<tr>
+					<td> ${equi.nombre}</td>
+					<td> ${equi.ciudad}</td>
+					<td> ${equi.seudonimo}</td>
+					<td> ${equi.añoFundacion}</td>	
+					<td><a href="/equipos/eliminarEquipo?id=${equi.id}" onclick="return confirm('Esta seguro?');">Eliminar</a></td>	
+				</tr>
+			#{/list}
+			</table>
+		#{/if}
+		#{else}
+			<div class="bg-danger">
+				<h3>Aun no hay Equipos</h3>
+			</div>
+		#{/else}
+		
+		
+		
+		</div>
+
+	
+	</div>
+	
+
+
+</div>
