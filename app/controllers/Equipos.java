@@ -18,8 +18,24 @@ public class Equipos extends Controller {
     }
     
     
-    public static void editar(){
-    	render();
+    public static void editar(Long id){
+    	Equipo equipo= Equipo.findById(id);//buscando el equipo a editar
+    
+    	render(equipo);
+    }
+    
+    public static void actualizarEquipo(Long id, String nombre, String ciudad, String seudonimo, int añoFundacion){
+    	
+    	Equipo equipo =Equipo.findById(id);
+    	equipo.nombre=nombre;
+    	equipo.ciudad=ciudad;
+    	equipo.seudonimo=seudonimo;
+    	equipo.añoFundacion=añoFundacion;
+    	equipo.save();
+    	redirect("/equipos");
+    	
+    	
+    	
     }
     
     public static void guardarEquipo(String nombre, String ciudad, String seudonimo, int añoFundacion){

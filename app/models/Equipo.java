@@ -10,10 +10,10 @@ import java.util.*;
 @Entity
 public class Equipo extends Model {
 	
-	String nombre;
-	String ciudad;
-	String seudonimo;
-	int añoFundacion;
+	public String nombre;
+	public String ciudad;
+	public String seudonimo;
+	public int añoFundacion;
 
 	
 	

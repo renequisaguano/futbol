@@ -48,21 +48,24 @@
 		#{if equipos}	
 			<table class="table">
 				<tr>
+					<th>Id</th>
 					<th>Nombre</th>
 					<th>Ciudad</th>
 					<th>Seudonimo</th>
 					<th>Fundacion</th>
-					<th>Acciones</th>
+					<th colspan="2" class="text-center">Acciones</th>
 				</tr>
 				
 			
 			#{list items:equipos, as:'equi'}
-				<tr>
+				<tr>			
+					<td>${equi.id}</td>
 					<td> ${equi.nombre}</td>
 					<td> ${equi.ciudad}</td>
 					<td> ${equi.seudonimo}</td>
 					<td> ${equi.añoFundacion}</td>	
-					<td><a href="/equipos/eliminarEquipo?id=${equi.id}" onclick="return confirm('Esta seguro?');">Eliminar</a></td>	
+					<td class="text-center"><a href="/equipos/editar?id=${equi.id}">Editar</a></td>
+					<td class="text-center"><a href="/equipos/eliminarEquipo?id=${equi.id}" onclick="return confirm('Esta seguro?');">Eliminar</a></td>	
 				</tr>
 			#{/list}
 			</table>

@@ -1,4 +1,73 @@
 #{extends 'main.html' /}
 #{set title:'editar.html' /}
 
-Editar
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h1 class="well">Editando Equipo</h1>
+			</div>
+		</div>
+		
+		
+		#{form @Equipos.actualizarEquipo(id,nombre,ciudad,seudonimo,añoFundacion)}
+		
+			<input type="hidden" name="id" value="${equipo.id}">
+			
+				<div class="row">
+				<div class="col-lg-2 text-right">
+					<legend>Nombre: </legend>
+				</div>
+				
+				<div class="col-lg-8">
+					<input type="text" class="form-control"  value="${equipo.nombre}" name="nombre" placeholder="Ingrese el nombre del Equipo" required>
+				</div>
+			</div>
+			
+		
+			
+			
+			<div class="row">
+				<div class="col-lg-2 text-right">
+					<legend>Ciudad: </legend>
+				</div>
+				
+				<div class="col-lg-8">
+					<input type="text" class="form-control" value="${equipo.ciudad}" name="ciudad" placeholder="Ingrese ela ciudad del Equipo" required>
+				</div>
+			</div>
+		
+		
+			<div class="row">
+				<div class="col-lg-2 text-right">
+					<legend>Seudonimo: </legend>
+				</div>
+				
+				<div class="col-lg-8">
+					<input type="text" class="form-control" value="${equipo.seudonimo}"name="seudonimo" placeholder="Ingrese el seudonimo del Equipo" required>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-2 text-right">
+					<legend>Año de Fundacion: </legend>
+				</div>
+				
+				<div class="col-lg-8">
+					<input type="number" class="form-control" value="${equipo.añoFundacion}" name="añoFundacion" placeholder="Ingrese el año de fundacion del Equipo" required>
+				</div>
+			</div>
+			
+			
+				<div class="row">
+		
+				<div class="col-lg-12 text-center">
+					<button type="submit" class="btn btn-warning">Actualizar</button>
+					<a href="/equipos" class="btn btn-danger" onclick="return confirm('Esta Seguro?');">Cancelar</a>
+				</div>
+			</div>
+		#{/form}
+	
+	</div>
+	
+	
