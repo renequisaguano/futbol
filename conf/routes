@@ -17,6 +17,9 @@ GET     /public/                                staticDir:public
 
 #Ruta para acceder a Equipos
 
-*		/equipos								Equipos.index												
+*		/equipos								Equipos.index		
+
+#Ruta para acceder a los Jugadores
+*		/jugadores								Jugadores.index										
 
 

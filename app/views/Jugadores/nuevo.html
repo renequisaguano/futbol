@@ -1,0 +1,93 @@
+#{extends 'main.html' /}
+#{set title:'Nuevo Jugador' /}
+
+<script language="javascript">
+	$(document).ready(function (){
+		function mostrarImagen(input) {
+		 if (input.files && input.files[0]) {
+		  var reader = new FileReader();
+		  reader.onload = function (e) {
+		   $('#img_destino').attr('src', e.target.result);
+		  }
+		  reader.readAsDataURL(input.files[0]);
+		 }
+		}
+		 
+		$("#file_url").change(function(){
+		 mostrarImagen(this);
+		});
+	});
+</script>
+
+
+
+#{form @Jugadores.guardarJugador(), enctype:'multipart/form-data' }
+<div class="container">
+	<center><h1 class="well">Nuevo Jugador</h1></center>
+	
+	<br>
+	
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<legend>FOTO</legend>
+			
+			<img id="img_destino" height="120px" width="120px">  <br><br>
+			<center>   <input id="file_url" type="file" required name="j.foto">  </center>
+		</div>
+	</div>
+	
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<legend>Nombre:</legend>
+			<input type="text" class="form-control" name="j.nombre" required>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<legend>Apellido:</legend>
+			<input type="text" class="form-control" name="j.apellido" required>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<legend>Edad:</legend>
+			<input type="number" class="form-control" name="j.edad" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<legend>Pais:</legend>
+			<input type="text" class="form-control" name="j.pais" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+		
+			<legend>Equipo:</legend>
+			<select class="form-control" required name="j.equipo.id">
+				<option value=""> --Seleccione-- </option>
+				#{list items:equipos, as:'e'}
+					<option value="${e.id}"> ${e.nombre} </option>
+				#{/list}
+			</select>
+			
+		</div>
+	</div>
+	
+	<br>
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</div>
+	</div>
+	<br><br><br>
+
+</div>
+#{/form}

@@ -10,6 +10,7 @@ import java.util.*;
 @Entity
 public class Equipo extends Model {
 	
+	//atributos
 	public String nombre;
 	public String ciudad;
 	public String seudonimo;
@@ -17,6 +18,8 @@ public class Equipo extends Model {
 
 	
 	
+	
+	//Constructor
 	public Equipo(String nombre, String ciudad, String seudonimo,int añoFundacion) {
 		super();
 		this.nombre = nombre;
@@ -26,6 +29,6 @@ public class Equipo extends Model {
 
 	}
 
-	//Constructor
+	
 	
 }
